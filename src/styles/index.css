@@ -100,8 +100,18 @@ h1, h2, h3, h4, h5, h6, p, div {
   box-sizing: border-box;
 }
 
-i {
+i, em {
   font-style: normal;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #23C9DA;
+  box-shadow: 0px 2px 2px 0px rgba(162, 162, 162, 0.5);
+  border: 1px solid #FFFFFF;
+  border-radius: 50%;
 }
 
 strong, b {
@@ -136,6 +146,10 @@ strong, b {
   padding-bottom: 16px;
 }
 
+.pdb20 {
+  padding-bottom: 20px;
+}
+
 .mrt16 {
   margin-top: 16px !important;
 }
@@ -154,6 +168,10 @@ strong, b {
 
 .mrtb16 {
   margin: 16px 0;
+}
+
+.mrlr20 {
+  margin: 0 20px;
 }
 
 .mrtb30 {
@@ -213,6 +231,16 @@ strong, b {
   margin-right: 10px;
 }
 
+.newShape p {
+  font-weight: 500;
+  color: #2E3445;
+  line-height: 27px;
+}
+
+.newShape p b {
+  font-size: 26px;
+}
+
 .flexCenter, .app-wrapper .main-content .board .boradList .boardItemWrap .item {
   display: flex;
   align-items: center;
@@ -229,6 +257,8 @@ strong, b {
 .table {
   border-left: 1px solid #EBEEF5;
   border-right: 1px solid #EBEEF5;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .table .el-table__header-wrapper {
@@ -248,6 +278,34 @@ strong, b {
 
 .tabs .el-tabs__active-bar {
   background-color: #23C9DA;
+}
+
+.main-wrapper h1 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  height: 48px;
+  border-bottom: 1px solid #dadada;
+  padding-left: 40px !important;
+  position: relative;
+}
+
+.main-wrapper h1:before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 8px;
+  background-color: #23C9DA;
+  position: absolute;
+  left: 20px;
+}
+
+.main-wrapper h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #2E3445;
+  line-height: 12px;
+  padding: 26px 0 16px 20px;
 }
 
 .app-wrapper {
@@ -270,34 +328,6 @@ strong, b {
   background-color: #ffffff;
   padding: 0 20px;
   border-radius: 4px;
-}
-
-.app-wrapper .main-content .board h1 {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 27px;
-  height: 48px;
-  border-bottom: 1px solid #dadada;
-  padding-left: 40px;
-  position: relative;
-}
-
-.app-wrapper .main-content .board h1:before {
-  content: '';
-  display: inline-block;
-  width: 4px;
-  height: 8px;
-  background-color: #23C9DA;
-  position: absolute;
-  left: 20px;
-}
-
-.app-wrapper .main-content .board h2 {
-  font-size: 18px;
-  font-weight: 500;
-  color: #2E3445;
-  line-height: 12px;
-  padding: 26px 0 16px 20px;
 }
 
 .app-wrapper .main-content .board .boradList {
@@ -384,6 +414,44 @@ strong, b {
   display: flex;
 }
 
+.app-wrapper .main-content .board .trialCaseList i {
+  width: 70px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.app-wrapper .main-content .board .trialCaseList .trialCaseItem {
+  font-size: 14px;
+}
+
+.app-wrapper .main-content .board .trialCaseList .trialCaseItem strong {
+  font-size: 16px;
+  color: #2E3445;
+  line-height: 36px;
+  display: block;
+}
+
+.app-wrapper .main-content .board .trialCaseList .trialCaseItem p span b {
+  font-size: 26px;
+  padding-right: 10px;
+  min-width: 100px;
+  display: inline-block;
+}
+
+.app-wrapper .main-content .board .trialCaseList .trialCaseItem p span i {
+  width: auto;
+}
+
+.app-wrapper .main-content .board .trialCaseList .trialCaseItem p span em {
+  font-size: 18px;
+  padding: 0 10px;
+}
+
+.app-wrapper .main-content .board .sfgk {
+  color: #5D6573;
+}
+
 body {
   height: 100%;
   color: #2E3445;
@@ -391,6 +459,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-family: SourceHanSansCN-Medium, SourceHanSansCN;
+  font-size: 14px;
 }
 
 label {

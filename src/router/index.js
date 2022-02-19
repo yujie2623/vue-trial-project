@@ -34,7 +34,7 @@ const routes = [
             path: 'president',
             name: 'president',
             component: () => import('@/views/president/index'),
-            meta: { title: '厅长看板', icon: 'president' }
+            meta: { title: '庭长看板', icon: 'president' }
         }]
     }
     // {

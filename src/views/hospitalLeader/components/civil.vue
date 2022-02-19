@@ -226,7 +226,7 @@
                   <strong>现存</strong>
                   <p>
                     <span><b>12349</b><i>件</i></span>
-                    <span>同期<em>231</em></span>
+                    <span class="mrl20">同期<em>231</em></span>
                   </p>
                 </div>
               </div>
@@ -236,7 +236,7 @@
                   <strong>新增</strong>
                   <p>
                     <span><b>12349</b><i>件</i></span>
-                    <span>同期<em>231</em></span>
+                    <span class="mrl20">同期<em>231</em></span>
                   </p>
                 </div>
               </div>
@@ -246,7 +246,7 @@
                   <strong>已结</strong>
                   <p>
                     <span><b>1340</b><i>件</i></span>
-                    <span>同期<em>231</em></span>
+                    <span class="mrl20">同期<em>231</em></span>
                   </p>
                 </div>
               </div>

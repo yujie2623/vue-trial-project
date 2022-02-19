@@ -1,7 +1,18 @@
+@charset "UTF-8";
 h1, h2, h3, h4, h5, h6, p, div {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.font {
+  font-family: SourceHanSansCN-Light, SourceHanSansCN;
 }
 
 i, em {
@@ -24,14 +35,23 @@ strong, b {
 
 .maincolor {
   color: #29CB97;
+  font-size: 18px;
 }
 
 .fontSize16 {
   font-size: 16px;
 }
 
+.mainFontColor {
+  color: #29CB97;
+}
+
 .red {
   color: #FC534F !important;
+}
+
+.pab0 {
+  padding-bottom: 0 !important;
 }
 
 .mrlf20 {
@@ -48,6 +68,10 @@ strong, b {
 
 .pdb16 {
   padding-bottom: 16px;
+}
+
+.pdtb10 {
+  padding: 10px 0;
 }
 
 .pdb20 {
@@ -93,9 +117,21 @@ strong, b {
   text-align: center;
 }
 
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wh {
+  min-height: 250px;
+  width: 15%;
+}
+
 .shapeWrap {
   font-size: 18px;
   padding: 24px 0;
+  color: #2E3445;
 }
 
 .shapeWrap strong {
@@ -125,6 +161,28 @@ strong, b {
   padding: 0 24px;
 }
 
+.shapeWrap .percent {
+  font-size: 26px;
+  padding: 20px 0;
+}
+
+.shapeWrap .percent i {
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.shapeWrap .num {
+  padding-top: 20px;
+}
+
+.shapeWrap .tbtitle {
+  padding-right: 10px;
+}
+
+.noStyle {
+  padding: 20px;
+}
+
 .shape {
   width: 10px;
   height: 10px;
@@ -133,6 +191,25 @@ strong, b {
   box-shadow: 0px 2px 4px 0px #DEE2EE;
   border: 2px solid #FFFFFF;
   margin-right: 10px;
+}
+
+.newShape strong {
+  font-size: 18px;
+}
+
+.newShape p {
+  font-weight: 500;
+  color: #2E3445;
+  line-height: 27px;
+}
+
+.newShape p b {
+  font-size: 26px;
+  padding-right: 15px;
+}
+
+.newShape p .maincolor {
+  padding-left: 15px;
 }
 
 .flexCenter, .app-wrapper .main-content .board .boradList .boardItemWrap .item {
@@ -172,6 +249,10 @@ strong, b {
 
 .tabs .el-tabs__active-bar {
   background-color: #23C9DA;
+}
+
+.noleft .el-tabs__nav-scroll {
+  padding-left: 0px;
 }
 
 .main-wrapper h1 {
@@ -224,6 +305,14 @@ strong, b {
   border-radius: 4px;
 }
 
+.app-wrapper .main-content .presidentList {
+  padding-top: 24px;
+  background: #fff;
+  border-top: 1px solid #dadada;
+  box-shadow: 0px 2px 4px 3px #0a2f70;
+  border-radius: 4px;
+}
+
 .app-wrapper .main-content .board .boradList {
   flex-wrap: wrap;
 }
@@ -260,7 +349,7 @@ strong, b {
 
 .app-wrapper .main-content .board .boradList .boardItemWrap .item .boradBtn i {
   font-size: 12px;
-  padding-left: 24px;
+  padding-left: 12px;
 }
 
 .app-wrapper .main-content .board .boradList .boardItemWrap .item .boardNum {
@@ -274,6 +363,49 @@ strong, b {
 
 .app-wrapper .main-content .board .boradList .boardItemWrap .item .boardNum .maincolor {
   padding-top: 10px;
+}
+
+.app-wrapper .main-content .board .boradList .boardItemWrap .nowrap .boradBtn {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: normal;
+  padding: 0 10px;
+}
+
+.app-wrapper .main-content .board .boradList .boardItemWrap .nowrap .boradBtn > span {
+  padding-bottom: 10px;
+}
+
+.app-wrapper .main-content .board .boradList .boardItemWrap .nowrap .boradBtn i {
+  padding-left: 5px;
+}
+
+.app-wrapper .main-content .board .boradList .boardItemWrap .nowrap .boardNum {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.app-wrapper .main-content .board .boradList .boardItemWrap .nowrap .boardNum > span {
+  padding: 10px 0;
+}
+
+.app-wrapper .main-content .board .boradList .itemWrap p {
+  padding-bottom: 20px;
+  font-size: 16px;
+}
+
+.app-wrapper .main-content .board .boradList .itemWrap p strong {
+  font-size: 18px;
+  padding-right: 20px;
+}
+
+.app-wrapper .main-content .board .boradList .itemWrap p b {
+  font-size: 26px;
+}
+
+.app-wrapper .main-content .board .boradList .itemWrap p span {
+  font-size: 18px;
+  padding-left: 20px;
 }
 
 .app-wrapper .main-content .board .boradNormalList .bg {
@@ -304,6 +436,10 @@ strong, b {
   background-color: transparent !important;
 }
 
+.app-wrapper .main-content .board .boradNormalList .boardItemWrap .item .nobg {
+  background-color: #f3fcfd !important;
+}
+
 .app-wrapper .main-content .board .typeDistribution {
   display: flex;
 }
@@ -320,7 +456,7 @@ strong, b {
 }
 
 .app-wrapper .main-content .board .trialCaseList .trialCaseItem strong {
-  font-size: 16px;
+  font-size: 18px;
   color: #2E3445;
   line-height: 36px;
   display: block;
@@ -329,7 +465,6 @@ strong, b {
 .app-wrapper .main-content .board .trialCaseList .trialCaseItem p span b {
   font-size: 26px;
   padding-right: 10px;
-  min-width: 100px;
   display: inline-block;
 }
 
@@ -342,6 +477,116 @@ strong, b {
   padding: 0 10px;
 }
 
+.app-wrapper .main-content .board .trialCaseList .trialCaseItem .fontSty span, .app-wrapper .main-content .board .trialCaseList .trialCaseItem .fontSty em {
+  font-size: 14px;
+}
+
+.app-wrapper .main-content .board .trialCaseLine {
+  min-height: 150px;
+  position: relative;
+}
+
+.app-wrapper .main-content .board .trialCaseLine::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100px;
+  top: 50%;
+  right: -30px;
+  background: rgba(226, 230, 236, 0.31);
+  margin-top: -50px;
+}
+
+.app-wrapper .main-content .board .result {
+  border-top: 1px solid #dadada;
+}
+
+.app-wrapper .main-content .board .result h2 {
+  font-size: 26px;
+  line-height: 36px;
+}
+
 .app-wrapper .main-content .board .sfgk {
   color: #5D6573;
+}
+
+.app-wrapper .main-content .board .ulTable p {
+  width: 100%;
+  height: 32px;
+  line-height: 32px;
+  background: rgba(35, 201, 218, 0.29);
+  box-shadow: inset 0px -1px 0px 0px #E2E6EC;
+  border-radius: 2px 2px 0px 0px;
+  border: 1px solid #23C9DA;
+  text-align: center;
+}
+
+.app-wrapper .main-content .board .ulTable .ulTablexs {
+  background: rgba(24, 137, 250, 0.29);
+  border: 1px solid #1889FA;
+}
+
+.app-wrapper .main-content .board .ulTable .ulTablexz {
+  background: rgba(119, 134, 243, 0.29);
+  border: 1px solid #7786F3;
+}
+
+.app-wrapper .main-content .board .ulTable ul {
+  border: 1px solid #E2E6EC;
+  border-top: none;
+}
+
+.app-wrapper .main-content .board .ulTable ul li {
+  display: flex;
+  height: 32px;
+  line-height: 32px;
+  border-bottom: 1px solid #E2E6EC;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.app-wrapper .main-content .board .ulTable ul li:last-child {
+  border-bottom: none;
+}
+
+.app-wrapper .main-content .board .normalUl {
+  padding-left: 40px !important;
+}
+
+.app-wrapper .main-content .board .normalUl .normal {
+  position: relative;
+}
+
+.app-wrapper .main-content .board .normalUl .normal::before {
+  content: '收案';
+  position: absolute;
+  left: -39px;
+}
+
+.app-wrapper .main-content .board .normalUl .normal.tb::before {
+  content: '同比';
+}
+
+.app-wrapper .main-content .board .normalUl .normal.zb::before {
+  content: '占比';
+}
+
+.app-wrapper .main-content .board .normalUl .normal.hj::before {
+  content: '合计';
+}
+
+.app-wrapper .main-content .board .normalUl .normal.zb::before {
+  content: '占比';
+}
+
+.app-wrapper .main-content .board .lineBar li {
+  display: flex;
+  justify-content: space-around;
+  height: 49px;
+  line-height: 49px;
+  background: rgba(35, 201, 218, 0.05);
+  box-shadow: inset 0px -1px 0px 0px #E2E6EC;
+  border-radius: 2px;
+  border: 1px solid #23C9DA;
+  margin-bottom: 9px;
 }
