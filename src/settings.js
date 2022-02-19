@@ -1,6 +1,6 @@
 module.exports = {
 
-    title: '后台管理系统',
+    title: '审判管理分析平台',
   
   
     fixedHeader: true,//固定顶部

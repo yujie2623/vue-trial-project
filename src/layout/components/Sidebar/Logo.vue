@@ -24,7 +24,7 @@ export default {
   },
   data() {
     return {
-      title: '后台管理系统',
+      title: '审判管理分析平台',
       logo: require("@/assets/logo.png")
     }
   },
@@ -46,11 +46,10 @@ export default {
 
 .sidebar-logo-container {
   position: relative;
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  background: #2b2f3a;
-  text-align: center;
+  width: 300px;
+  height: 56px;
+  line-height: 56px;
+  text-align: left;
   overflow: hidden;
 
   & .sidebar-logo-link {

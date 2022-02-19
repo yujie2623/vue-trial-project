@@ -2,15 +2,12 @@
 <div>
   <div :class="classObj" class="app-wrapper">
     <div class="wrapper">
-      <topSider />
+      <!-- <topSider /> -->
+      <sidebar class="sidebar-container" />
       <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
       <div class="main-wrapper">
-        <sidebar class="sidebar-container" />
         <div class="main">
           <div class="main-container">
-            <!-- <div :class="{'fixed-header':fixedHeader}">
-              <navbar />
-            </div> -->
             <app-main />
           </div>
         </div>
@@ -21,14 +18,13 @@
 </template>
 
 <script>
-import { Sidebar, AppMain, topSider } from './components'
+import { Sidebar, AppMain } from './components'
 
 export default {
   name: 'Layout',
   components: {
     Sidebar,
-    AppMain,
-    topSider
+    AppMain
   },
   mixins: [],
   computed: {
@@ -61,18 +57,13 @@ export default {
 <style lang="scss" scoped>
   @import "~@/styles/mixin.scss";
   @import "~@/styles/variables.scss";
-  .main-wrapper {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    .sidebar-container {
-      min-width: 200px;
-      height: calc(100vh - 60px);
-      // background-color: #2b2f3a;
-    }
-    .main {
-      width: 100%;
-      height: 100%;
+  .app-wrapper {
+    .wrapper {
+      .sidebar-container {
+        width: 100%;
+        display: flex;
+        background: linear-gradient(90deg, #235EA6 0%, #2278AF 100%);
+      }
     }
   }
 </style>

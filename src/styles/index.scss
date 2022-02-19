@@ -2,15 +2,15 @@
 @import './mixin.scss';
 @import './transition.scss';
 @import './element-ui.scss';
-@import './sidebar.scss';
+@import './main.scss';
 
 body {
   height: 100%;
-  color: #1f2d3d;
+  color: #2E3445;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+  font-family: SourceHanSansCN-Medium, SourceHanSansCN;
 }
 
 label {
@@ -60,7 +60,19 @@ div:focus {
   }
 }
 
-// main-container global css
-.app-container {
-  padding: 20px;
+/*滚动条样式*/
+::-webkit-scrollbar {
+  width: 4px;    
+  /*height: 4px;*/
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px #E2E6EC;
+  background: #E2E6EC;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px #E2E6EC;
+  border-radius: 0;
+  background: #F5F6F9;
+
 }

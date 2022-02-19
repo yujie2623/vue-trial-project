@@ -1,0 +1,313 @@
+h1,h2,h3,h4,h5,h6,p,div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+i,em {
+  font-style: normal;
+}
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #23C9DA;
+  box-shadow: 0px 2px 2px 0px rgba(162, 162, 162, 0.5);
+  border: 1px solid #FFFFFF;
+  border-radius: 50%;
+}
+strong, b {
+  font-weight: 500;
+}
+$palr24: 0 20px;
+$white: #ffffff;
+$borderradius: 4px;
+$bg: #23C9DA;
+$bgColor: #29CB97;
+$red: #FC534F;
+
+.maincolor {
+  color: $bgColor;
+}
+.fontSize16 {
+  font-size: 16px;
+}
+.red {
+  color: $red!important;
+}
+.mrlf20 {
+  margin: 0 20px;
+}
+.palr24 {
+  padding: $palr24;
+}
+.pdt16 {
+  padding-top: 16px;
+}
+.pdb16 {
+  padding-bottom: 16px;
+}
+.pdb20 {
+  padding-bottom: 20px;
+}
+.mrt16 {
+  margin-top: 16px!important;
+}
+.mrt24 {
+  margin-top: 24px;
+}
+.mrt6 {
+  margin-top: 6px;
+}
+.mrb16 {
+  margin-bottom: 16px;
+}
+.mrtb16 {
+  margin: 16px 0;
+}
+.mrlr20 {
+  margin: 0 20px;
+}
+.mrtb30 {
+  margin: 30px 0;
+}
+.mrl20 {
+  margin-left: 20px;
+}
+.shapeBg {
+  background: #FFFFFF;
+  box-shadow: 0px -2px 4px 0px rgba(10, 47, 112, 0.1);
+  border-radius: 4px;
+  text-align: center;
+}
+.shapeWrap {
+  font-size: 18px;
+  padding: 24px 0;
+  strong {
+    display: block;
+  }
+  p.btn {
+    background: rgba(35, 201, 218, 0.1);
+    border-radius: 4px;
+    line-height: 50px;
+    display: inline-block;
+    padding: 0 20px;
+    color: #23C9DA;
+    i {
+      font-size: 12px;
+      padding-left: 20px;
+    }
+  }
+  p.tb {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+}
+.shape {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background: #7786F3;
+  box-shadow: 0px 2px 4px 0px #DEE2EE;
+  border: 2px solid #FFFFFF;
+  margin-right: 10px;
+}
+.flexCenter {
+  display: flex;
+  align-items: center;
+}
+.white {
+  background-color: $white;
+}
+.borderradius {
+  border-radius: $borderradius;
+}
+// element样式
+.table {
+  border-left: 1px solid #EBEEF5;
+  border-right: 1px solid #EBEEF5;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  .el-table__header-wrapper {
+    border: 1px solid #23C9DA;
+    border-bottom: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+}
+.tabs {
+  .el-tabs__nav-scroll {
+    padding-left: 20px;
+  }
+  .el-tabs__item.is-active, .el-tabs__item:hover {
+    color: $bg;
+  }
+  .el-tabs__active-bar {
+    background-color: $bg;
+  }
+}
+.main-wrapper {
+  h1 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    height: 48px;
+    border-bottom: 1px solid #dadada;
+    padding-left: 40px!important;
+    position: relative;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 8px;
+      background-color: $bg;
+      position: absolute;
+      left: 20px;
+    }
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #2E3445;
+    line-height: 12px;
+    padding: 26px 0 16px 20px;
+  }
+}
+.app-wrapper {
+  width: 100%;
+  height: 100%;
+  background: rgb(239,242,246);
+  .main-wrapper {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .main-header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white;
+    padding: $palr24;
+    border-radius: $borderradius;
+  }
+  .main-content {
+    .board {
+      // .boradMain {}
+      .boradList {
+        flex-wrap: wrap;
+        .boardItemWrap {
+          padding: 20px;
+          background: #FFFFFF;
+          box-shadow: 0px -2px 4px 0px rgba(10, 47, 112, 10%);
+          strong {
+            font-size: 18px;
+            font-weight: 500;
+          }
+          .item {
+            @extend .flexCenter;
+            justify-content: space-between;
+            .boradBtn {
+              background-color: rgb(243,252,253);
+              height: 50px;
+              line-height: 50px;
+              display: inline-block;
+              text-align: center;
+              padding: 0 20px;
+              b {
+                font-size: 18px;
+                font-weight: 400;
+                letter-spacing: 1px;
+              }
+              i {
+                font-size: 12px;
+                padding-left: 24px;
+              }
+            }
+            .boardNum {
+              font-size: 14px;
+              display: inline-block;
+              span {
+                display: block;
+              }
+              .maincolor {
+                padding-top: 10px;
+              }
+            }
+          }
+        }
+      }
+      .boradNormalList {
+        .bg {
+          background: #FFFFFF;
+          box-shadow: 0px -2px 4px 0px rgba(10, 47, 112, 0.1);
+          border-radius: 4px;
+          .line {
+            position: relative;
+            &:before {
+              content: "";
+              display: block;
+              width: calc(100% - 40px);
+              height: 1px;
+              background-color: rgba(226, 230, 236, 0.31);
+              position: absolute;
+              top: 0;
+            }
+            
+          }
+        }
+        .boardItemWrap {
+          box-shadow: none!important;
+          .item {
+            .boradBtn {
+              background-color: transparent!important;
+            }
+          }
+        }
+      }
+      .typeDistribution {
+        display: flex;
+      }
+      .trialCaseList {
+        i {
+          width: 70px;
+          height: 30px;
+          border-radius: 50%;
+          display: inline-block;
+        }
+        .trialCaseItem {
+          font-size: 14px;
+          strong {
+            font-size: 16px;
+            color: #2E3445;
+            line-height: 36px;
+            display: block;
+          }
+          p {
+            span {
+              b {
+                font-size: 26px;
+                padding-right: 10px;
+                min-width: 100px;
+                display: inline-block;
+              }
+              i {
+                width: auto;
+              }
+              em {
+                font-size: 18px;
+                padding: 0 10px;
+              }
+            }
+          }
+        }
+      }
+      .sfgk {
+        color: #5D6573;
+      }
+    }
+  }
+}
