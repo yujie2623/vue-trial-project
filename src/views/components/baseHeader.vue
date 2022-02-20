@@ -1,7 +1,7 @@
 <template>
   <div class="baseHeader mrt16 pdb16">
     <h3>{{title}}</h3>
-    <h1 class="flexCenter palr24">{{firstTitle}}</h1>
+    <h1 v-if="firstTitle" class="flexCenter palr24">{{firstTitle}}</h1>
   </div>
 </template>
 <script>

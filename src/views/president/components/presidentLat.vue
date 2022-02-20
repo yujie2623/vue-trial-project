@@ -49,6 +49,12 @@
       </el-row>
     </div>
     <div class="board borderradius white">
+      <h1 class="flexCenter palr24">案件审理情况趋势</h1>
+      <div class="pdt16 pdb16" style="height: 400px">
+        <barline :data="data"  />
+      </div>
+    </div>
+    <div class="board borderradius white">
       <h1 class="flexCenter palr24">收案案件组成成分情况</h1>
       <el-row class="palr24 pdt16" :gutter="20">
         <el-col :span="7" class="normalUl">
@@ -212,9 +218,11 @@
         <h1 class="flexCenter palr24">诉前调解分析</h1>
         <el-row class="boradList palr24" type="flex" :gutter="20">
           <el-col :span="14" class="mrt16">
-            <div>ddd</div>
+            <div style="width:300px;height:260px">
+              <funnel :data="funnelData" />
+            </div>
           </el-col>
-          <el-col :span="10" class="mrt16">
+          <el-col :span="10" class="mrt16 flex">
             <div class="boardItemWrap itemWrap">
               <p>
                 <strong>败诉率</strong>
@@ -234,21 +242,68 @@
       <el-col :span="12">
         <h1 class="flexCenter palr24">网上立案情况</h1>
         <el-row class="boradList palr24" type="flex" :gutter="20">
-          <el-col :span="10" class="mrt16">
-            <div>ddd</div>
+          <el-col :span="8" class="mrt16">
+            <div class="vline">
+              <strong class="total">
+                <b>一审立案总数</b>
+                <p>256件</p>
+              </strong>
+              <div class="totalZb">
+                <div class="title">
+                  <b>一审网上立案数</b>
+                  <p>157件</p>
+                  <p>
+                    <em>占比</em>
+                    <em>68.62%</em>
+                  </p>
+                </div>
+              </div>
+            </div>
           </el-col>
-          <el-col :span="14" class="mrt16">
-            <div>ddd</div>
+          <el-col :span="16" class="mrt16">
+            <div class="palr24" style="width:100%;height: 300px;">
+              <pie :data="peiSentence" />
+            </div>
           </el-col>
         </el-row>
       </el-col>
       <el-col :span="12">
         <h1 class="flexCenter palr24">网上诉前调解率</h1>
-        <el-col :span="10" class="mrt16">
-            <div>ddd</div>
+        <el-col :span="12" class="mrt16 flex">
+          <div class="palr24" style="width:50%;height: 300px;">
+            <pieCircle :data="pieCircleRate" />
+          </div>
+           <div class="palr24" style="width:50%;height: 300px;">
+            <pieCircle :data="pieCircleRate2" />
+          </div>
           </el-col>
-          <el-col :span="14" class="mrt16">
-            <div>ddd</div>
+          <el-col :span="12" class="mrt16 palr24">
+            <div class="margin-top:38%">
+              <div class="horiline">
+                <strong class="total">
+                  <b>调解成功数</b>
+                  <p>78件</p>
+                </strong>
+                <div class="totalZb">
+                  <div class="title">
+                    <b>调解调解收案数</b>
+                    <p>78件</p>
+                  </div>
+                </div>
+              </div>
+              <div class="horiline">
+                <strong class="total">
+                  <b>调解成功数</b>
+                  <p>78件</p>
+                </strong>
+                <div class="totalZb">
+                  <div class="title">
+                    <b>调解调解收案数</b>
+                    <p>78件</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </el-col>
       </el-col>
     </el-row>
@@ -326,9 +381,13 @@
 </template>
 <script>
 import baseHeader from '../../components/baseHeader'
+import barline from '@/views/components/echart/barline'
+import funnel from '@/views/components/echart/funnel'
+import pie from '@/views/components/echart/pie'
+import pieCircle from '@/views/components/echart/pieCircle'
 export default {
   name: 'presidentMs',
-  components: { baseHeader },
+  components: { baseHeader,barline,funnel,pie, pieCircle},
   data() {
     return {
       tableData:[
@@ -561,7 +620,64 @@ export default {
           zbtb: '2.9%'
         }
       ],
-      activeName: 'first'
+      activeName: 'first',
+       // 案件审理情况统计
+      data: {
+        id: 'barLine1',
+        color: ['#23C9DA','#1889FA','#7786F3','#FD9656'],
+        yAxisNameLeft: '案件数量(件)',
+        yAxisNameRight: '结案率',
+        legend: ['受理', '新增','结案','结案率'],
+        category: ['2022-01','2022-02','2022-03','2022-04','2022-05','2022-06','2022-07','2022-08','2022-09','2022-10','2022-11','2022-12'],
+        data: [
+            [2600,2600,2500,3900,4500,3200,3200,3100,1900,1800,1800,1100],
+            [1800,2200,3200,4600,5000,4100,3800,4100,1000,1200,1500,1500],
+            [1200,1600,2100,2900,3100,2700,2800,2800,1800,1800,1000,1100],
+            [19,23,25,80,100,68,70,70,16,20,21,90]
+        ],
+        seriesType: ['line', 'line', 'line','line'],
+        yAxisIndex: [0,0,0,1],
+      },
+      funnelData: {
+        id: 'funnel',
+        color: ['#23C9DA','#1889FA','#FD9656'],
+        data: [
+          {name:'新收案件',value:123},
+          {name:'诉前调解收案',value:103},
+          {name:'调解成功',value:67},
+        ]
+      },
+      peiSentence: {
+        id: 'peiSentence',
+        color: ['#23C9DA','#FD9656','#F9D029','#1889FA','#7786F3'],
+        titleShow: false,
+        text: '',
+        pieUnit: '件',
+        radius: '40%',
+        seriesLabelShow: true,
+        seriesLabelLineShow: true,
+        data: [
+          {name:'国家赔偿金',value:227},
+          {name:'民事一审',value:227},
+          {name:'行政一审',value:227},
+          {name:'执行1',value:227},
+          {name:'执行2',value:227}
+        ]
+      },
+      pieCircleRate: {
+        id: 'pie2',
+        color: ['#23C9DA','#BFEFF4'],
+        pieUnit: '件',
+        data: [{name:'执行',value:63.5},{name:'国家赔偿金',value:26.5}],
+        title: '网上调解成功率'
+      },
+      pieCircleRate2: {
+        id: 'pieRate',
+        color: ['#23C9DA','#BFEFF4'],
+        pieUnit: '件',
+        data: [{name:'执行',value:63.5},{name:'国家赔偿金',value:26.5}],
+        title: '网上调解成功率'
+      }
     }
   },
   computed: {

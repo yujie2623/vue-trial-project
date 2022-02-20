@@ -1,6 +1,6 @@
 <template>
   <div class="main-header mrt16">
-    <el-select v-model="value" placeholder="请选择" @change="search">
+    <el-select v-if="isShowType" v-model="value" placeholder="请选择" @change="search">
       <el-option
         v-for="item in options"
         :key="item.value"
@@ -8,12 +8,23 @@
         :value="item.value">
       </el-option>
     </el-select>
-    <span v-if="isShowRouter">{{routetitle}}</span>
+    <span class="title" v-if="isShowRouter">{{routetitle}}</span>
     <div v-if="isShowTs">
       庭室：
       <el-select v-model="value2" placeholder="请选择" @change="search">
         <el-option
           v-for="item in optionsTs"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value">
+        </el-option>
+      </el-select>
+    </div>
+    <div v-if="isArea">
+      地区：
+      <el-select v-model="value3" placeholder="请选择" @change="search">
+        <el-option
+          v-for="item in optionsArea"
           :key="item.value"
           :label="item.label"
           :value="item.value">
@@ -38,6 +49,10 @@
 <script>
 export default {
   props: {
+    isShowType: {
+      type: Boolean,
+      default: false
+    },
     options: {
       type: Array,
       default: () => []
@@ -53,6 +68,14 @@ export default {
     optionsTs: {
       type: Array,
       default: () => []
+    },
+    optionsArea: {
+      type:Array,
+      default: () => []
+    },
+    isArea: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -60,7 +83,8 @@ export default {
       value: '1',
       routetitle: this.$route.meta.title,
       value1: '',
-      value2: ''
+      value2: '',
+      value3: ''
     }
   },
   methods: {
@@ -70,3 +94,11 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.title {
+  font-size: 18px;
+  font-family: SourceHanSansCN-Medium, SourceHanSansCN;
+  font-weight: 500;
+  color: #2E3445;
+}
+</style>

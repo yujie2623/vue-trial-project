@@ -50,7 +50,9 @@
     </div>
     <div class="board borderradius white">
       <h1 class="flexCenter palr24">案件审理情况趋势</h1>
-      <div style="min-height: 300px"></div>
+      <div class="pdt16 pdb16" style="height: 400px">
+        <barline :data="data"  />
+      </div>
     </div>
     <el-row class="board borderradius white">
       <el-col :span="12">
@@ -215,6 +217,7 @@
                 </div>
               </el-col>
               <el-col :span="19">
+                <line-echart v-if="activeName === 'third'" :data="linedata" />
               </el-col>
             </el-row>
           </el-tab-pane>
@@ -251,8 +254,39 @@
       <el-col :span="12">
         <h1 class="flexCenter palr24">案件后审情况分析</h1>
         <el-row class="boradList boradNormalList palr24 mrt16 pdb20" type="flex" :gutter="20">
-          <el-col :span="12"></el-col>
-          <el-col :span="12"></el-col>
+          <el-col :span="8">
+            <div class="vline">
+              <strong class="total">
+                <b>一审立案总数</b>
+                <p>256件</p>
+              </strong>
+              <div class="totalZb">
+                <div class="title">
+                  <b>一审网上立案数</b>
+                  <p>157件</p>
+                  <p>
+                    <em>占比</em>
+                    <em>68.62%</em>
+                  </p>
+                </div>
+              </div>
+              <div class="totalZb sx">
+                <div class="title">
+                  <b>一审网上立案数</b>
+                  <p>157件</p>
+                  <p>
+                    <em>占比</em>
+                    <em>68.62%</em>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </el-col>
+          <el-col :span="16">
+            <div class="palr24" style="width:100%;height: 300px;">
+              <pie :data="peiAppeal" />
+            </div>
+          </el-col>
         </el-row>
       </el-col>
       <el-col :span="12">
@@ -325,7 +359,11 @@
     <el-row class="board borderradius white palr24" :gutter="20">
       <el-col :span="12">
         <el-row>
-          <el-col :span="12">ssa</el-col>
+          <el-col :span="12">
+            <div class="pdt16 pdb16" style="height: 250px">
+              <pie :data="rosedata" />
+            </div>
+          </el-col>
           <el-col :span="12">
             <el-table :data="tableData3" class="table" style="width: 100%" max-height="250" :header-cell-style="{background: 'rgba(35, 201, 218, 0.05)'}">
               <el-table-column prop="tz" label="特征" show-overflow-tooltip></el-table-column>
@@ -336,6 +374,9 @@
       </el-col>
       <el-col :span="12">
         <strong>量刑分析</strong>
+        <div class="pdt16 pdb16" style="height: 250px">
+          <bar :data="dataPortrait "  />
+        </div>
       </el-col>
     </el-row>
     <div class="board borderradius white">
@@ -343,7 +384,11 @@
       <el-row class="palr24 pdt16" :gutter="20">
         <el-col :span="12">
           <el-row>
-            <el-col :span="12">ff</el-col>
+            <el-col :span="12">
+              <div class="pdt16 pdb16" style="height: 250px">
+              <pie :data="rosedata1" />
+            </div>
+            </el-col>
             <el-col :span="12">
               <el-table :data="tableData4" class="table" style="width: 100%" max-height="250" :header-cell-style="{background: 'rgba(35, 201, 218, 0.05)'}">
                 <el-table-column prop="dwtz" label="特征" show-overflow-tooltip></el-table-column>
@@ -354,6 +399,9 @@
         </el-col>
         <el-col :span="12">
           <strong>量刑分析</strong>
+          <div class="pdt16 pdb16" style="height: 250px">
+            <bar :data="dataPortrait1 "  />
+          </div>
         </el-col>
       </el-row>
     </div>
@@ -361,9 +409,13 @@
 </template>
 <script>
 import baseHeader from '../../components/baseHeader'
+import pie from '@/views/components/echart/pie'
+import barline from '@/views/components/echart/barline'
+import bar from '@/views/components/echart/bar'
+import lineEchart from '@/views/components/echart/line'
 export default {
   name: 'presidentMs',
-  components: { baseHeader },
+  components: { baseHeader, barline, lineEchart, pie, bar },
   data() {
     return {
       tableData:[
@@ -552,7 +604,96 @@ export default {
           dwzb: '36.00%'
         }
       ],
-      activeName: 'first'
+      activeName: 'first',
+      // 案件审理情况统计
+      data: {
+        id: 'barLine1',
+        color: ['#23C9DA','#1889FA','#7786F3','#FD9656'],
+        yAxisNameLeft: '案件数量(件)',
+        yAxisNameRight: '结案率',
+        legend: ['受理', '新增','结案','结案率'],
+        category: ['2022-01','2022-02','2022-03','2022-04','2022-05','2022-06','2022-07','2022-08','2022-09','2022-10','2022-11','2022-12'],
+        data: [
+            [2600,2600,2500,3900,4500,3200,3200,3100,1900,1800,1800,1100],
+            [1800,2200,3200,4600,5000,4100,3800,4100,1000,1200,1500,1500],
+            [1200,1600,2100,2900,3100,2700,2800,2800,1800,1800,1000,1100],
+            [19,23,25,80,100,68,70,70,16,20,21,90]
+        ],
+        seriesType: ['bar', 'bar', 'bar','line'],
+        yAxisIndex: [0,0,0,1],
+      },
+      // 超审限
+      linedata: {
+       id: 'line',
+       color: ['#23C9DA','#FD9656'],
+       yAxisName: '数量(件)',
+       legend: ['超审限总数','超审变更总数'],
+       category: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+       data: [[2000,3000,3200,3400,5000,3300,3200,3100,4100,4050,4000,4900],[200,900,1500,1900,1800,1400,1800,1000,2100,2000,2200,2800]]
+      },
+      peiAppeal: {
+        id: 'peiAppeal',
+        color: ['#23C9DA','#FD9656','#1889FA'],
+        titleShow: true,
+        text: '',
+        pieUnit: '件',
+        radius: ['25%','50%'],
+        seriesLabelShow: true,
+        seriesLabelLineShow: true,
+        data: [
+          {name:'发回重审',value:10},
+          {name:'依法改判',value:18},
+          {name:'维持原判',value:78}
+        ]
+      },
+      // 被告人画像
+      dataPortrait: {
+        id: 'dataPortrait',
+        color: ['#23C9DA'],
+        yAxisName: '案件数(件)',
+        legend: [''],
+        category: ['3年以下 有期徒刑','3年-5年 有期徒刑','5年以上 有期徒刑','无期徒刑','死刑','管制','拘役'],
+        data: [[250,20,240,400,100,330,300,200]]
+      },
+      // 玫瑰图
+      rosedata: {
+        id: 'rose',
+        color: ['#23C9DA','#1889FA','#FD9656','#F9D029'],
+        pieUnit: '件',
+        radius: '70%',
+        roseType: 'radius',
+        data: [
+          {name:'年龄',value:927},
+          {name:'刑罚类型',value:955},
+          {name:'犯罪金额',value:806},
+          {name:'罪名',value:750},
+          {name:'其他',value:355}
+        ]
+      },
+      // 单位犯罪分析
+      dataPortrait1: {
+        id: 'dataPortrait1',
+        color: ['#23C9DA'],
+        yAxisName: '案件数(件)',
+        legend: [''],
+        category: ['3年以下 有期徒刑','3年-5年 有期徒刑','5年以上 有期徒刑','无期徒刑','死刑','管制','拘役'],
+        data: [[250,20,240,400,100,330,300,200]]
+      },
+      // 玫瑰图
+      rosedata1: {
+        id: 'rose1',
+        color: ['#23C9DA','#1889FA','#FD9656','#F9D029'],
+        pieUnit: '件',
+        radius: '70%',
+        roseType: 'radius',
+        data: [
+          {name:'年龄',value:927},
+          {name:'刑罚类型',value:550},
+          {name:'犯罪金额',value:806},
+          {name:'罪名',value:750},
+          {name:'其他',value:645}
+        ]
+      }
     }
   }
 }

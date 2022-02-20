@@ -27,16 +27,54 @@ const routes = [
     }]
   },
   {
-        path: "/president",
-        component: Layout,
-        redirect: '/president',
-        children: [{
-            path: 'president',
-            name: 'president',
-            component: () => import('@/views/president/index'),
-            meta: { title: '庭长看板', icon: 'president' }
-        }]
-    }
+    path: "/president",
+    component: Layout,
+    redirect: '/president',
+    children: [{
+        path: 'president',
+        name: 'president',
+        component: () => import('@/views/president/index'),
+        meta: { title: '庭长看板', icon: 'president' }
+    }]
+  },
+  {
+    path: "/juveniles",
+    component: Layout,
+    redirect: '/juveniles/',
+    meta: { title: '专题分析', icon: 'dashboard' },
+    children: [
+      {
+        path: 'juveniles',
+        name: 'juveniles',
+        component: () => import('@/views/special/juveniles'),
+        meta: { title: '未成年人犯罪分析', icon: 'test' }
+      },
+      {
+        path: 'intellectual',
+        name: 'intellectual',
+        component: () => import('@/views/special/intellectual'),
+        meta: { title: '知识产权侵权分析', icon: 'test' }
+      },
+      {
+        path: 'drugCrimes',
+        name: 'drugCrimes',
+        component: () => import('@/views/special/drugCrimes'),
+        meta: { title: '毒品犯罪分析', icon: 'test' }
+      },
+      {
+        path: 'dutyCrimes',
+        name: 'dutyCrimes',
+        component: () => import('@/views/special/dutyCrimes'),
+        meta: { title: '职务犯罪分析', icon: 'test' }
+      },
+      {
+        path: 'environment',
+        name: 'environment',
+        component: () => import('@/views/special/environment'),
+        meta: { title: '环境资源专题', icon: 'test' }
+      }
+    ]
+  },
     // {
     //     path: "/ztfx",
     //     component: Layout,

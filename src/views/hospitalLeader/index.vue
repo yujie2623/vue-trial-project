@@ -1,6 +1,6 @@
 <template>
   <div class="main-content">
-    <header-search :options="options" @search="search" />
+    <header-search :options="options" :isShowType="true" @search="search" />
     <component :is="currentView"></component>
   </div>
 </template>
