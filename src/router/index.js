@@ -38,9 +38,9 @@ const routes = [
     }]
   },
   {
-    path: "/juveniles",
+    path: "/special",
     component: Layout,
-    redirect: '/juveniles/',
+    redirect: '/juveniles',
     meta: { title: '专题分析', icon: 'dashboard' },
     children: [
       {
@@ -75,109 +75,69 @@ const routes = [
       }
     ]
   },
-    // {
-    //     path: "/ztfx",
-    //     component: Layout,
-    //     redirect: '/ztfx/ztfx',
-    //     meta: { title: '专题分析', icon: 'dashboard' },
-    //     children: [
-    //         {
-    //             path: 'ztfx',
-    //             name: 'ztfx',
-    //             component: () => import('@/views/dashboard/index'),
-    //             meta: { title: '未成年人犯罪分析', icon: 'dashboard' }
-    //         },
-    //         {
-    //             path: 'ztfx1',
-    //             name: 'ztfx1',
-    //             component: () => import('@/views/dashboard/index'),
-    //             meta: { title: '知识产权侵权分析', icon: 'dashboard' }
-    //         },
-    //         {
-    //             path: 'ztfx2',
-    //             name: 'ztfx2',
-    //             component: () => import('@/views/dashboard/index'),
-    //             meta: { title: '毒品犯罪分析', icon: 'dashboard' }
-    //         },
-    //         {
-    //             path: 'ztfx3',
-    //             name: 'ztfx3',
-    //             component: () => import('@/views/dashboard/index'),
-    //             meta: { title: '职务犯罪分析', icon: 'dashboard' }
-    //         },
-    //         {
-    //             path: 'ztfx4',
-    //             name: 'ztfx4',
-    //             component: () => import('@/views/dashboard/index'),
-    //             meta: { title: '环境资源专题', icon: 'dashboard' }
-    //         }
-    //     ]
-    // },
-    // {
-    //     path: '/tjbb',
-    //     component: Layout,
-    //     redirect: '/tjbb/table',
-    //     name: 'tjbb',
-    //     meta: { title: '统计报表', icon: 'dashboard' },
-    //     children: [
-    //         {
-    //             path: 'table',
-    //             name: 'Table',
-    //             component: () => import('@/views/table/index'),
-    //             meta: { title: '案件收结情况', icon: 'table' }
-    //         },
-    //         {
-    //             path: 'table1',
-    //             name: 'Table1',
-    //             component: () => import('@/views/table/index'),
-    //             meta: { title: '审判质效指标', icon: 'table' }
-    //         },
-    //         {
-    //             path: 'table1',
-    //             name: 'Table1',
-    //             component: () => import('@/views/table/index'),
-    //             meta: { title: '院庭长办案情况', icon: 'table' }
-    //         },
-    //         {
-    //             path: 'table1',
-    //             name: 'Table1',
-    //             component: () => import('@/views/table/index'),
-    //             meta: { title: '异常案件统计', icon: 'table' }
-    //         }
-    //     ]
-    // },
-    // {
-    //     path: '/zxjd',
-    //     component: Layout,
-    //     redirect: '/zxjd/table',
-    //     name: 'zxjd',
-    //     meta: { title: '质效监督', icon: 'dashboard' },
-    //     children: [
-    //         {
-    //             path: 'table',
-    //             name: 'Table',
-    //             component: () => import('@/views/table/index'),
-    //             meta: { title: '办案质效监测', icon: 'table' }
-    //         },
-    //         {
-    //             path: 'table1',
-    //             name: 'Table1',
-    //             component: () => import('@/views/table/index'),
-    //             meta: { title: '质效评估方案s', icon: 'table' }
-    //         }
-    //     ]
-    // },
-    // {
-    //     path: "/system",
-    //     component: Layout,
-    //     redirect: '/system',
-    //     children: [{
-    //         path: 'system',
-    //         name: 'system',
-    //         component: () => import('@/views/dashboard/index'),
-    //         meta: { title: '系统管理', icon: 'dashboard' }
-    //     }]
-    // },
+  {
+    path: '/statistical',
+    component: Layout,
+    redirect: '/statistical/caseClosure',
+    meta: { title: '统计报表', icon: 'statistical' },
+    children: [
+      {
+        path: 'caseClosure',
+        name: 'caseClosure',
+        component: () => import('@/views/statistical/caseClosure'),
+        meta: { title: '案件收结情况', icon: 'caseClosure' }
+      },
+      {
+        path: 'qualityEffect',
+        name: 'TablqualityEffecte1',
+        component: () => import('@/views/statistical/qualityEffect'),
+        meta: { title: '审判质效指标', icon: 'qualityEffect' }
+      },
+      {
+        path: 'caseHandling',
+        name: 'caseHandling',
+        component: () => import('@/views/statistical/caseHandling'),
+        meta: { title: '院庭长办案情况', icon: 'caseHandling' }
+      },
+      {
+        path: 'caseAbnormal',
+        name: 'caseAbnormal',
+        component: () => import('@/views/statistical/caseAbnormal'),
+        meta: { title: '异常案件统计', icon: 'table' }
+      }
+    ]
+  },
+  {
+    path: '/supervision',
+    component: Layout,
+    redirect: '/supervision/caseQuality',
+    meta: { title: '质效监督', icon: 'supervision' },
+    children: [
+      {
+        path: 'caseQuality',
+        name: 'caseQuality',
+        component: () => import('@/views/supervision/caseQuality'),
+        meta: { title: '办案质效监测', icon: 'caseQuality' }
+      },
+      {
+        path: 'scheme',
+        name: 'scheme',
+        component: () => import('@/views/supervision/scheme'),
+        meta: { title: '质效评估方案', icon: 'scheme' }
+      }
+    ]
+  },
+  {
+    path: "/system",
+    component: Layout,
+    redirect: '/system',
+    children: [{
+      path: 'system',
+      name: 'system',
+      component: () => import('@/views/system/index'),
+      meta: { title: '系统管理', icon: 'system' }
+    }]
+  }
 ]
 
 const createRouter = () => new Router({

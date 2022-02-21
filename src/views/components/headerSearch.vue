@@ -31,7 +31,7 @@
         </el-option>
       </el-select>
     </div>
-    <div class="search">
+    <div class="search" v-if="isTime">
       日期：
       <el-date-picker
         v-model="value1"
@@ -76,6 +76,10 @@ export default {
     isArea: {
       type: Boolean,
       default: false
+    },
+    isTime: {
+      type: Boolean,
+      default: true
     }
   },
   data() {

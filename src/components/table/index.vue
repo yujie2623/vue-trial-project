@@ -1,0 +1,39 @@
+<template>
+  <el-table class="table" 
+    :data="tableData" :height="height" :header-cell-style="{background: 'rgba(35, 201, 218, 0.05)'}">
+    <template v-for="item in tableHeader">
+      <table-column v-if="item.children && item.children.length" :key="item.id" :coloumn-header="item"></table-column>
+      <el-table-column v-else :key="item.id" :label="item.label" :prop="item.prop" align="center"></el-table-column>
+    </template>
+  </el-table>
+</template>
+
+<script>
+import TableColumn from './TableColumn'
+export default {
+  props: {
+    // 表格的数据
+    tableData: {
+      type: Array,
+      required: true
+    },
+    // 多级表头的数据
+    tableHeader: {
+      type: Array,
+      required: true
+    },
+    // 表格的高度
+    height: {
+      type: String,
+      default: '300'
+    }
+  },
+  components: {
+    TableColumn
+  }
+}
+</script>
+
+<style scoped>
+
+</style>

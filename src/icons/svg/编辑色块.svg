@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编辑色块</title>
+    <g id="质效监督" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="评估方案" transform="translate(-1074.000000, -213.000000)" fill-rule="nonzero">
+            <g id="care" transform="translate(144.000000, 200.000000)">
+                <g id="编组" transform="translate(930.000000, 10.000000)">
+                    <g id="编辑色块" transform="translate(0.000000, 3.000000)">
+                        <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="16" height="16"></rect>
+                        <path d="M12.1225,6.137 L9.6975,3.444 L2.512,10.051 L1.9125,12.9875 L4.89,12.787 L12.1225,6.137 Z M14.5305,3.593 L12.4805,1.2345 L12.476,1.2295 C12.3826221,1.12796952 12.2246544,1.12125701 12.123,1.2145 L10.0735,3.0985 L12.498,5.7915 L14.511,3.9405 C14.6108159,3.8491948 14.6194742,3.69489918 14.5305,3.593 L14.5305,3.593 Z M1.5,14 L14.5,14 L14.5,15 L1.5,15 L1.5,14 Z" id="形状" fill="#23C9DA"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

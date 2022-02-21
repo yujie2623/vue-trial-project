@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>分析</title>
+    <g id="院领导看板" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="院领导看板-本院综合" transform="translate(-626.000000, -23.000000)" fill-rule="nonzero">
+            <g id="专题分析" transform="translate(610.000000, 0.000000)">
+                <g id="分析" transform="translate(16.000000, 23.000000)">
+                    <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="16" height="16"></rect>
+                    <path d="M2.25,1 L14.75,1 C15.4403559,1 16,1.55964406 16,2.25 L16,14.75 C16,15.4403559 15.4403559,16 14.75,16 L2.25,16 C1.55964406,16 1,15.4403559 1,14.75 L1,2.25 C1,1.55964406 1.55964406,1 2.25,1 Z M3.5,7.25 L3.5,13.5 L6,13.5 L6,7.25 L3.5,7.25 Z M7.25,4.75 L7.25,13.5 L9.75,13.5 L9.75,4.75 L7.25,4.75 Z M11,8.5 L11,13.5 L13.5,13.5 L13.5,8.5 L11,8.5 Z" id="形状" fill="#DFE1EF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
